@@ -15,10 +15,7 @@ export function Home() {
           <TimeLine>
         
             <Post />
-            <Post />
-            <Post />
-            <Post />
-            <Post />
+
           </TimeLine>
         </Content>
     

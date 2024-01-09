@@ -4,7 +4,7 @@ export const Container = styled.div`
     grid-area: content;
     display: flex;
     flex-direction: column;
-    width: 25.6rem;
+    min-width: 25.6rem;
     border-radius: 8px;
     height: fit-content;
     background-color: ${({theme}) => theme.COLORS.GRAY_800};
@@ -51,6 +51,7 @@ export const User = styled.div`
         color: ${({theme}) => theme.COLORS.GRAY_500};
         font-weight: 400;
         margin-bottom: 2.4rem;
+        
     }
 
 

@@ -17,7 +17,7 @@ export function Profile(){
 
             <EditUser>
                 
-                <button> <PencilLine size={20} /> Editar seu perfil</button>
+                <button> <PencilLine size={20}/> Editar seu perfil</button>
             </EditUser>
         </Container>
     )

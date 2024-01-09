@@ -18,6 +18,8 @@ export const Content = styled.section`
     gap: 3.2rem;
     width: 100%;
     padding: 3.2rem 16rem;
+    align-items: flex-start;
+    justify-content: center;
     
 `;
 
