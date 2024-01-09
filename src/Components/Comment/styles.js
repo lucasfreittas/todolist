@@ -93,7 +93,7 @@ export const Textarea = styled.div`
 
         > textarea{
             width: 100%;
-            height: 9.6rem;
+            height: 9.6rem;;
             background-color: ${({theme}) => theme.COLORS.GRAY_900};
             color: ${({theme}) => theme.COLORS.GRAY_300};
             font-size: 1.6rem;
