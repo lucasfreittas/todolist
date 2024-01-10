@@ -112,6 +112,8 @@ export const Textarea = styled.div`
             outline: 1px solid ${({theme}) => theme.COLORS.GREEN_300};
         }
 
+       
+
         > button{
             border: none;
             font-size: 1.6rem;
@@ -122,9 +124,19 @@ export const Textarea = styled.div`
             width: fit-content;
             border-radius: 8px;
             transition: all 0.1s ease-in-out;
+            display: none;
+            
         }
 
         > button:hover{
             background-color: ${({theme}) => theme.COLORS.GREEN_300};
         }
+
+         &:focus-within > button{
+            display: block;
+        }
+`;
+
+export const CommentList = styled.div`
+
 `;

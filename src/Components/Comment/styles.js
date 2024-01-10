@@ -4,69 +4,40 @@ export const Container = styled.div`
     grid-area: content;
     display: flex;
     flex-direction: column;
-    gap: 2.4rem;
-
     height: 100%;
     width: 100%;
-    padding: 4rem;
     border-radius: 8px;
 
     background-color: ${({theme}) => theme.COLORS.GRAY_800};
+
+    
 `;
 
-export const User = styled.div`
+export const CommentWrapper = styled.div`
     display: flex;
-    gap: 1.6rem;
-    align-items: center;
-    
-
-    >  img {
+    > img {
         box-sizing: content-box;
-        width: 5.8rem;
+        width: 5rem;
+        height: 5rem;
         object-fit: cover;
-        overflow: hidden;
         border-radius: 8px;
-        border: 4px solid ${({theme}) => theme.COLORS.GRAY_800};
-        outline: 2px solid ${({theme}) => theme.COLORS.GREEN_300};
-        
+        margin-right: 1.6rem;
     };
 
-    > div {
-        width: 100%;
-    }
-    > div p {
-        font-size: 1.6rem;
-        color: ${({theme}) => theme.COLORS.GRAY_200};
-        font-weight: 700;
-        margin-bottom: 0.4rem;
-    };
-
-    > div span {
-        font-size: 1.4rem;
-        color: ${({theme}) => theme.COLORS.GRAY_500};
-        font-weight: 400;
-        margin-bottom: 2.4rem;
-    }
-
-    >  span {
-        align-self: right;
-        font-size: 1.4rem;
-        color: ${({theme}) => theme.COLORS.GRAY_500};
-        font-weight: 400;
-        white-space: nowrap;
-    }
 `;
 
 export const Text = styled.div`
         display: flex;
         flex-direction: column;
-        gap: 2.4rem;
         font-size: 1.6rem;
         color: ${({theme}) => theme.COLORS.GRAY_300};
+        background-color: #29292E;
         font-weight: 400;
         padding-bottom: 2.4rem;
         line-height: 160%;
-        border-bottom: 1px solid ${({theme}) => theme.COLORS.GRAY_700};
+        width: 100%;
+        padding: 1.6rem 1.6rem 2.4rem 1.6rem;
+        border-radius: 8px;
 
         > a {
             font-weight: 700;
@@ -77,6 +48,44 @@ export const Text = styled.div`
             font-weight: 700;
             color: ${({theme}) => theme.COLORS.GREEN_300};
         }
+
+        > .profile{
+            display: flex;
+            align-items: flex-start;
+            font-size: 1.4rem;
+            color: ${({theme}) => theme.COLORS.GRAY_200};
+            font-weight: 700;
+            gap: 1rem;
+            width: 100%;
+            white-space: nowrap;
+
+            > span{
+                color: ${({theme}) => theme.COLORS.GRAY_500};
+                font-weight: 300;
+                width: 100%;
+            }
+
+            > button {
+                border: none;
+                box-shadow: none;
+                background: transparent;
+                font-size: 0;
+
+                :hover{
+                    color: ${({theme}) => theme.COLORS.RED_500}
+                }
+            }}
+
+            .timeDate{
+                font-size: 1.2rem;
+                color: ${({theme}) => theme.COLORS.GRAY_500};
+
+            }
+
+            > p{
+                font-size: 1.4rem;
+                margin-top: 1.6rem;
+            }
 `;
 
 export const Textarea = styled.div`
@@ -93,7 +102,7 @@ export const Textarea = styled.div`
 
         > textarea{
             width: 100%;
-            height: 9.6rem;;
+            height: 9.6rem;
             background-color: ${({theme}) => theme.COLORS.GRAY_900};
             color: ${({theme}) => theme.COLORS.GRAY_300};
             font-size: 1.6rem;
@@ -127,4 +136,33 @@ export const Textarea = styled.div`
         > button:hover{
             background-color: ${({theme}) => theme.COLORS.GREEN_300};
         }
+`;
+
+export const Actions = styled.button`
+    background:  transparent;
+    border: none;
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    margin-left: 7rem;
+    margin-top: 1rem;
+    color: ${({theme}) => theme.COLORS.GRAY_500};
+
+    > div {
+        display: flex;
+        gap: 1rem;
+
+        
+    }
+
+    > div:hover{
+        color: ${({theme}) => theme.COLORS.GREEN_300};
+    }
+
+    p, span {
+        font-size: 1.4rem;
+    }
+
+    
+
 `;

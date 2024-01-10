@@ -1,4 +1,5 @@
-import { Container, User, Text, Textarea } from './styles'
+import { Container, User, Text, Textarea, CommentList } from './styles'
+import { Comment } from '../Comment'
 
 export function Post(){
     return(
@@ -31,6 +32,10 @@ export function Post(){
                 <textarea name="comment" id="comment" cols="30" rows="10" placeholder='Digite seu texto'></textarea>
                 <button>Publicar</button>
             </Textarea>
+            <CommentList>
+                <Comment />
+            </CommentList>
+
         </Container>
     )
 }
