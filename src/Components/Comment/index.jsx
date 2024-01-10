@@ -1,3 +1,4 @@
+import { Avatar } from '../Avatar'
 import { Container, Text, Actions, CommentWrapper } from './styles'
 import { Trash, ThumbsUp } from '@phosphor-icons/react'
 
@@ -5,7 +6,7 @@ export function Comment(){
     return(
         <Container>
             <CommentWrapper>
-                <img src="https://github.com/lucasfreittas.png"/>
+                <Avatar src="https://github.com/lucasfreittas.png" hasBorder={false}/>
                 <Text>
                     <div className='profile'>
                         <p>Lucas Freitas</p>

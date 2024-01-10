@@ -10,16 +10,25 @@ export const Container = styled.div`
     grid-template-areas:
     "header"
     "content";
-
+  
+    @media (max-width: 768px) {
+        grid-template-rows: 1fr;
+        grid-area: content;
+    }
 `;
 
 export const Content = styled.section`
     display: flex;
     gap: 3.2rem;
     width: 100%;
-    padding: 3.2rem 16rem;
+    padding: 3.2rem 2.4rem;
     align-items: flex-start;
     justify-content: center;
+
+    @media (max-width: 768px) {
+        flex-direction: column;
+        padding: 3.2rem 2.4rem;
+    }
     
 `;
 

@@ -15,15 +15,6 @@ export const Container = styled.div`
 
 export const CommentWrapper = styled.div`
     display: flex;
-    > img {
-        box-sizing: content-box;
-        width: 5rem;
-        height: 5rem;
-        object-fit: cover;
-        border-radius: 8px;
-        margin-right: 1.6rem;
-    };
-
 `;
 
 export const Text = styled.div`
@@ -38,6 +29,7 @@ export const Text = styled.div`
         width: 100%;
         padding: 1.6rem 1.6rem 2.4rem 1.6rem;
         border-radius: 8px;
+        margin-left: 1.6rem;
 
         > a {
             font-weight: 700;
@@ -151,8 +143,7 @@ export const Actions = styled.button`
     > div {
         display: flex;
         gap: 1rem;
-
-        
+        align-items: center;
     }
 
     > div:hover{

@@ -1,11 +1,12 @@
 import { Container, User, Text, Textarea, CommentList } from './styles'
 import { Comment } from '../Comment'
+import { Avatar } from '../Avatar'
 
 export function Post(){
     return(
         <Container>
             <User>
-                <img src="https://github.com/lucasfreittas.png"/>
+                <Avatar src="https://github.com/lucasfreittas.png"/>
                 <div>
                     <p>Lucas Freitas</p>
                     <span>Front-End Developer</span>

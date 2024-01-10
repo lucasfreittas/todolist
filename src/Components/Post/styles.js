@@ -12,6 +12,8 @@ export const Container = styled.div`
     border-radius: 8px;
 
     background-color: ${({theme}) => theme.COLORS.GRAY_800};
+
+    
 `;
 
 export const User = styled.div`
@@ -19,18 +21,6 @@ export const User = styled.div`
     gap: 1.6rem;
     align-items: center;
     
-
-    >  img {
-        box-sizing: content-box;
-        width: 5.8rem;
-        object-fit: cover;
-        overflow: hidden;
-        border-radius: 8px;
-        border: 4px solid ${({theme}) => theme.COLORS.GRAY_800};
-        outline: 2px solid ${({theme}) => theme.COLORS.GREEN_300};
-        
-    };
-
     > div {
         width: 100%;
     }

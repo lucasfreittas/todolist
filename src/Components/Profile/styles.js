@@ -18,6 +18,9 @@ export const Container = styled.div`
         border-radius: 8px 8px 0 0 ;
     };
 
+    @media (max-width: 768px) {
+        width: 100%;
+    }
     
 `;
 
@@ -27,16 +30,9 @@ export const User = styled.div`
     align-items: center;
 
     > img {
-        box-sizing: content-box;
-        width: 5.8rem;
         margin-bottom: 2.4rem;
         margin-top: -13%;
-        object-fit: cover;
-        overflow: hidden;
-        border-radius: 8px;
-        border: 4px solid ${({theme}) => theme.COLORS.GRAY_800};
-        outline: 2px solid ${({theme}) => theme.COLORS.GREEN_300};
-        
+              
     };
 
     > p {
