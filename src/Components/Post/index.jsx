@@ -6,7 +6,7 @@ import ptBR from 'date-fns/locale/pt-BR'
 import { Comment } from '../Comment'
 import { Avatar } from '../Avatar'
 
-export function Post({ author, content, time}){
+export function Post({ author, content, time, comment}){
     const formatDate = format(time, "d 'de' LLLL 'às' HH:mm'h'", {
         locale: ptBR
     });
@@ -57,7 +57,13 @@ export function Post({ author, content, time}){
                 <button>Publicar</button>
             </Textarea>
             <CommentList>
-                <Comment />
+                {comment && comment.map(text => {
+                    return(
+                        <Comment
+                            commentText={text.content}
+                        />
+                    )
+                })}
             </CommentList>
 
         </Container>

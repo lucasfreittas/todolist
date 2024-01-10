@@ -2,7 +2,7 @@ import { Avatar } from '../Avatar'
 import { Container, Text, Actions, CommentWrapper } from './styles'
 import { Trash, ThumbsUp } from '@phosphor-icons/react'
 
-export function Comment(){
+export function Comment({commentText}){
     return(
         <Container>
             <CommentWrapper>
@@ -18,7 +18,7 @@ export function Comment(){
                         Cerca de 2h
                     </span>
                     <p>
-                        Muito bom Devon, parabéns!!
+                        {commentText}
                     </p>
                     
                 </Text>

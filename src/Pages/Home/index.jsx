@@ -19,7 +19,7 @@ export function Home() {
       {type: 'link', content: 'jane.design/doctorcare'},
       {type: 'hashtag', content: ['#novoprojeto', '#nlw', '#rocketseat']},
     ],
-    publishedAt: new Date('2024-01-01 20:00:00')
+    publishedAt: new Date('2024-01-10 20:00:00'),
   },
   {
     id: 2,
@@ -34,9 +34,10 @@ export function Home() {
       {type: 'link', content: 'google.com.br'},
       {type: 'hashtag', content: ['#google', '#project', '#rocketseat']},
     ],
-    publishedAt: new Date('2024-01-01 20:00:00')
+    publishedAt: new Date('2024-01-01 20:00:00'),
   },
 ]
+
   
   return (
     <Container>
@@ -55,6 +56,7 @@ export function Home() {
                 author={data.author}
                 time={data.publishedAt}
                 content={data.content}
+                comment={data.comment}
               />
             )
            })
