@@ -1,32 +1,55 @@
 import { Container, User, Text, Textarea, CommentList } from './styles'
+
+import { format, formatDistanceToNow } from 'date-fns'
+import ptBR from 'date-fns/locale/pt-BR'
+
 import { Comment } from '../Comment'
 import { Avatar } from '../Avatar'
 
-export function Post(){
+export function Post({ author, content, time}){
+    const formatDate = format(time, "d 'de' LLLL 'às' HH:mm'h'", {
+        locale: ptBR
+    });
+
+    const formatDateToNow = formatDistanceToNow(time, {
+        locale: ptBR,
+        addSuffix: true,
+    })
+    
+
     return(
         <Container>
             <User>
-                <Avatar src="https://github.com/lucasfreittas.png"/>
+                <Avatar src={author.avatarUrl}/>
                 <div>
-                    <p>Lucas Freitas</p>
-                    <span>Front-End Developer</span>
+                    <p>{author.name}</p>
+                    <span>{author.role}</span>
                 </div>
 
-                <span>Públicado há 1h</span>
+                <span dateTime={formatDate}>{formatDateToNow}</span>
             </User>
             <Text>
-                <p>
-                    Fala Galera
+                {
+                    content && content.map(text => {
+                        if(text.type === 'paragrah'){
+                            return <p key={text.id}>{text.content}</p>
+                            
+                        } else if(text.type === 'link'){
+                            return <a key={text.id} href={text.content}>{text.content}</a>
 
-                    Acabei de subir mais um projeto no meu portifa. É um projeto que fiz no meu NLW Return,
-                    evento da Rocketseat. O nome do projeto é DoctorCare
-                </p>
-                <a href="#">jane.design/doctorcare</a>
-                <div className='hashtags'>
-                    <span> #novoprojeto </span> 
-                    <span> #nlw </span>
-                    <span> #rocketseat </span>
-                </div>
+                        } else if(text.type === 'hashtag'){
+                            return (
+                                <div key={text.id} className="hashtag-container">
+                                  {text.content.map(hashtag => (
+                                    <span key={hashtag} className="hashtag">{hashtag}</span>
+                                  ))}
+                                </div>
+                              );
+                            }
+                            // Se o tipo for desconhecido ou não tratado, retorne null ou algo apropriado.
+                            return null;
+                          })
+                        }
             </Text>
             <Textarea>
                 <p>Deixe seu feedback</p>

@@ -67,6 +67,14 @@ export const Text = styled.div`
             font-weight: 700;
             color: ${({theme}) => theme.COLORS.GREEN_300};
         }
+
+        > .hashtag-container {
+            display: flex;
+            gap: 0.8rem;
+            font-weight: 700;
+            color: ${({theme}) => theme.COLORS.GREEN_300};
+            width: fit-content;
+        }
 `;
 
 export const Textarea = styled.div`
