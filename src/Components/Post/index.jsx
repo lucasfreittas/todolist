@@ -7,7 +7,7 @@ import { Comment } from '../Comment'
 import { Avatar } from '../Avatar'
 import { useState } from 'react'
 
-export function Post({ author, content, time, comment}){
+export function Post({ author, content, time }){
 
     const [comments, setComments] = useState([
         'Post muito bacana, hein!?'
@@ -34,7 +34,16 @@ export function Post({ author, content, time, comment}){
         event.preventDefault()
         setComments([...comments, newComment])
         setNewComment('')
-    }
+    };
+
+    function deleteComment(commentToDelete){
+        const commentsWithoutDeletedOne = comments.filter(comment => {
+            return comment != commentToDelete
+        })
+        
+        setComments(commentsWithoutDeletedOne)
+    };
+
 
     return(
         <Container>
@@ -97,6 +106,7 @@ export function Post({ author, content, time, comment}){
                         <Comment
                             key={text}
                             commentText={text}
+                            onDeleteComment={deleteComment}
                         />
                     )
                 })}

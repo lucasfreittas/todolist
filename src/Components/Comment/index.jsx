@@ -2,7 +2,12 @@ import { Avatar } from '../Avatar'
 import { Container, Text, Actions, CommentWrapper } from './styles'
 import { Trash, ThumbsUp } from '@phosphor-icons/react'
 
-export function Comment({commentText}){
+export function Comment({commentText, onDeleteComment}){
+
+    function handleDeleteComment(){
+        onDeleteComment(commentText)
+    };
+
     return(
         <Container>
             <CommentWrapper>
@@ -11,7 +16,7 @@ export function Comment({commentText}){
                     <div className='profile'>
                         <p>Lucas Freitas</p>
                         <span>(Você)</span>
-                        <button title='trash'><Trash size={24}/></button>
+                        <button title='trash' onClick={handleDeleteComment}><Trash size={24}/></button>
                         
                     </div>
                     <span className='timeDate'>
