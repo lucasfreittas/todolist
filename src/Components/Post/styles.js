@@ -123,6 +123,15 @@ export const Textarea = styled.form`
             border-radius: 8px;
             transition: all 0.1s ease-in-out;
             display: none;
+
+            &:disabled{
+                opacity: 0.7;
+                cursor: not-allowed;
+            
+                &:hover{
+                    background-color: ${({theme}) => theme.COLORS.GREEN_600};
+                };
+            };
             
         }
 

@@ -16,6 +16,8 @@ export function Post({ author, content, time }){
 
     const [ newComment, setNewComment] = useState('')
 
+    const isCommentInvalid = newComment.length <= 0
+
     const formatDate = format(time, "d 'de' LLLL 'às' HH:mm'h'", {
         locale: ptBR
     });
@@ -80,7 +82,7 @@ export function Post({ author, content, time }){
                                 </div>
                               );
                             }
-                            // Se o tipo for desconhecido ou não tratado, retorne null ou algo apropriado.
+                           
                             return null;
                           })
                         }
@@ -104,6 +106,7 @@ export function Post({ author, content, time }){
                     type='submit'
                     name='comment'
                     id='comment'
+                    disabled={isCommentInvalid}
                 >
                     Publicar
                 </button>
