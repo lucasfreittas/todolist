@@ -77,7 +77,7 @@ export const Text = styled.div`
         }
 `;
 
-export const Textarea = styled.div`
+export const Textarea = styled.form`
         display: flex;
         flex-direction: column;
         gap: 1.6rem;

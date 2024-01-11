@@ -9,7 +9,11 @@ export const Container = styled.div`
     border-radius: 8px;
 
     background-color: ${({theme}) => theme.COLORS.GRAY_800};
-    margin-bottom: 3.6rem;
+   
+
+    & ~ & {
+        margin-top: 3.6rem;
+  }
     
 `;
 
