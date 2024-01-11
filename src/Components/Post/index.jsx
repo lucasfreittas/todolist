@@ -28,6 +28,8 @@ export function Post({ author, content, time }){
 
     function handleTextAreaValue(){
         setNewComment(event.target.value)
+        event.target.setCustomValidity('')
+        
     };
 
     function handleCreateNewComment(){
@@ -35,6 +37,10 @@ export function Post({ author, content, time }){
         setComments([...comments, newComment])
         setNewComment('')
     };
+
+    function handleInvalidComment(){
+        event.target.setCustomValidity('Tu não comentou nada meu filho!')
+    }
 
     function deleteComment(commentToDelete){
         const commentsWithoutDeletedOne = comments.filter(comment => {
@@ -89,6 +95,8 @@ export function Post({ author, content, time }){
                     placeholder='Digite o seu texto'
                     value={newComment}
                     onChange={handleTextAreaValue}
+                    onInvalid={handleInvalidComment}
+                    required
                     >
                         
                     </textarea>
